@@ -303,7 +303,7 @@ document.querySelectorAll('[data-case]').forEach(el=>el.addEventListener('click'
  fill('caseIdea',c.idea);fill('caseProcess',c.process);fill('caseResult',c.result);
  const actions=document.getElementById('caseActions');actions.innerHTML='';
  c.videos.forEach((v,i)=>{const b=document.createElement('button');b.textContent=c.labels[i];b.onclick=()=>{player.src=v;player.play().catch(()=>{})};actions.appendChild(b)});
- player.src=c.videos[0]; modal.classList.add('open');document.body.style.overflow='hidden';
+ player.src=c.videos[0]; modal.classList.add('open');document.body.style.overflow='auto';
 }));
 function closeModal(){player.pause();player.removeAttribute('src');player.load();modal.classList.remove('open');document.body.style.overflow=''}
 document.getElementById('closeCase').onclick=closeModal;modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
